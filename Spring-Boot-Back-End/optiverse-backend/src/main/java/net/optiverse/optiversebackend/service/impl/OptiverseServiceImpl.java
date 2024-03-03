@@ -8,6 +8,7 @@ import net.optiverse.optiversebackend.mapper.OptiverseMapper;
 import net.optiverse.optiversebackend.model.OptiverseDto;
 import net.optiverse.optiversebackend.repository.OptiverseRepository;
 import net.optiverse.optiversebackend.service.OptiverseService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +23,12 @@ public class OptiverseServiceImpl implements OptiverseService {
     private OptiverseRepository optiverseRepository;
     @Override
     public OptiverseDto createUser(OptiverseDto optiverseDto) {
+        BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();//encoding the password
+        String encryptedPassword = bCrypt.encode(optiverseDto.getPassword());
+
         Optiverse optiverse = OptiverseMapper.mapToOptiverse(optiverseDto);
+        optiverse.setPassword(encryptedPassword);//saving the password optiverse
+        optiverse.setExpired(true);//setting the expiry to true
         Optiverse savedUser = optiverseRepository.save(optiverse);
         return OptiverseMapper.mapToOptiversDto(savedUser);
     }
@@ -58,8 +64,10 @@ public class OptiverseServiceImpl implements OptiverseService {
 
     @Override
     public Boolean loginIn(OptiverseDto optiverseDto) {
+        BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
+
         Optiverse optiverse = optiverseRepository.findByEmail(optiverseDto.getEmail());//getting the email
-        if(optiverse != null && optiverse.getPassword().equals(optiverseDto.getPassword())){//and verifying with the password
+        if(optiverse != null && bCrypt.matches(optiverseDto.getPassword(), optiverse.getPassword())){//and verifying with the password used during login VS database password
             return true;
         }
         return false;
