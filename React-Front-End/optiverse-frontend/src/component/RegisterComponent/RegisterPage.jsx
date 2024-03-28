@@ -139,53 +139,54 @@ const RegisterPage = () => {
   
 
   return (
-    <div className='container' >
-      <ToastContainer />
-      <div className='wrapper'>
-      <form> 
-        <h1>Register</h1>
-        <div className='input-box'>
-          <input type='email' placeholder='Enter Your Email' id='email'
-          name='email' value={email} onChange={ (e) => setEmail(e.target.value) }
-          ></input>
-          {/* Your form goes here */}
-          {/* {errorMessage && <p style={{ color: 'white' }}>{errorMessage}</p>} */}
-          {/* {inputErrorMessage && <p style={{ color: 'white' }}>{inputErrorMessage}</p>} */}
-          <MdEmail className='icon'/>
-        </div>
+    <div className='gradient-background'>
+      <div className='container' >
+        <ToastContainer />
+        <div className='wrapper'>
+        <form className='form'> 
+          <h1>Register</h1>
+          <div className='input-box'>
+            <input type='email' placeholder='Enter Your Email' id='email'
+            name='email' value={email} onChange={ (e) => setEmail(e.target.value) }
+            ></input>
+            {/* Your form goes here */}
+            {/* {errorMessage && <p style={{ color: 'white' }}>{errorMessage}</p>} */}
+            {/* {inputErrorMessage && <p style={{ color: 'white' }}>{inputErrorMessage}</p>} */}
+            <MdEmail className='icon'/>
+          </div>
 
-        <div className='input-box'>
-          <input type={show? "text" : "password" } placeholder='Enter Your Password'
-          name='password' value={password} onChange= { (e) => setPassword(e.target.value)} //  {(e) => validate(e.target.value)}
-          ></input>
-          <label onClick={handleShow} >  {show ? <HiEyeSlash className='icon'/> : <HiMiniEye className='icon'/>} </label>
-          {/* {passErrorMessage && <p style={{ color: 'white' }}>{passErrorMessage}</p>} */}
-        </div>
+          <div className='input-box'>
+            <input type={show? "text" : "password" } placeholder='Enter Your Password'
+            name='password' value={password} onChange= { (e) => setPassword(e.target.value)} //  {(e) => validate(e.target.value)}
+            ></input>
+            <label onClick={handleShow} >  {show ? <HiEyeSlash className='icon'/> : <HiMiniEye className='icon'/>} </label>
+            {/* {passErrorMessage && <p style={{ color: 'white' }}>{passErrorMessage}</p>} */}
+          </div>
 
-        <div className='remember-forgot'>
-          <label>
-            <input 
-            type="checkbox"
-            name="acceptTerms"
-            id='acceptTerms'
-            value={acceptTerms}
-            onChange={handleChange}
-            />Accept All Terms & Conditions
-          </label>
-          {/* {acceptTermsMessage && <p style={{ color: 'white', marginTop: '17px' }}>{acceptTermsMessage}</p>} */}
-        </div>
+          <div className='remember-forgot'>
+            <label>
+              <input 
+              type="checkbox"
+              name="acceptTerms"
+              id='acceptTerms'
+              value={acceptTerms}
+              onChange={handleChange}
+              />Accept All Terms & Conditions
+            </label>
+            {/* {acceptTermsMessage && <p style={{ color: 'white', marginTop: '17px' }}>{acceptTermsMessage}</p>} */}
+          </div>
 
-        <button 
-        onClick={ (e) => handleRegistration(e) }>Register</button>
-        <div className='register-link' >
-          <p>Already have an account? <a href='/login'>Login</a></p>
-        </div>
+          <button 
+          onClick={ (e) => handleRegistration(e) }>Register</button>
+          <div className='register-link' >
+            <p>Already have an account? <a href='/login'>Login</a></p>
+          </div>
 
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-    
   )
 }
 
-export default RegisterPage
+export default RegisterPage;

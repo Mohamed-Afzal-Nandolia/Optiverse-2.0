@@ -1,0 +1,16 @@
+/* NavigationBar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .navbar p {
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .navbar p:hover {
+    color: blue;
+  }

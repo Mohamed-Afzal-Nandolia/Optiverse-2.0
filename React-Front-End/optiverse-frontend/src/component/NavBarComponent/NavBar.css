@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); /* POPPINS FONT */
+
+/* general */
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* border: 1px solid; */
+}
+body{
+    background-color: rgb(5, 26, 53);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* nav bar section */
+
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    border-bottom: 0.1px solid white;
+    /* background-color: rgb(5, 26, 53); */
+    z-index: 3;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 110px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(39, 39, 39, 0.4); */
+    z-index: 2;
+}
+
+/* FEED AND create-post section */
+
+#create-post {
+    margin-top: 200px;
+    padding: 25px;
+    background-color: #fbf3e4;
+}
+
+.feed-container .feed-box textarea{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    /* overflow-y: scroll;  */
+    outline: none;
+    border: none;
+    cursor: auto;
+    overflow-wrap: break-word;
+    font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* .feed-container .feed-box textarea::-webkit-scrollbar {
+    scrollbar;
+} */
+
+.feed-interactions .post-btn {
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 300;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.feed-interactions .post-btn :hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* feed general */
+
+.feed-container{
+    margin: 20px;
+    width: 750px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fbf3e4;
+}
+
+.feed-container .feed-box p{
+    padding: 15px;
+}
+
+.feed-interactions{
+    display: flex;
+    justify-content: right;
+    padding: 20px 0;
+}
+
+.feed-btn{
+    padding: 0 20px;
+}
+
+/* media section */
+
+@media only screen and (max-width: 786px){
+    .nav-button{
+        display: none;
+    }
+    .nav-menu.responsive{
+        top: 100px;
+    }
+    .nav-menu{
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px);
+        transition: .3s;
+    }
+    .nav-menu ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu-btn{
+        display: block;
+    }
+    .nav-menu-btn i{
+        font-size: 25px;
+        color: #fff;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .nav-menu-btn i:hover{
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+@media only screen and (max-width: 540px) {
+    .wrapper{
+        min-height: 100vh;
+    }
+    .form-box{
+        width: 100%;
+        height: 500px;
+    }
+    .register-container, .login-container{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .register-container .two-forms{
+        flex-direction: column;
+        gap: 0;
+    }
+}

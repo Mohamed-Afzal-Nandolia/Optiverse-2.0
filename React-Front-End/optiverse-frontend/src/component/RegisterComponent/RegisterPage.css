@@ -1,3 +1,21 @@
+.gradient-background {
+    background: linear-gradient(300deg,#1d42a1,#051a35,#290250);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    height: 100vh;
+}
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
 .wrapper{
     width: 620px;
     height: 440px;
@@ -89,4 +107,9 @@
 }
 .register-link p a:hover{
     text-decoration: underline;
+}
+
+.form{
+    width: 500px;
+    height: 400px;
 }

@@ -39,42 +39,46 @@ const LoginPage = () => {
   }
 
   return (
-    <div className='wrapper'>
-      <form action=''> 
-        <h1>Reset Password</h1>
+    <div className='gradient-background'>
+      <div className='container'>
+        <div className='wrapper '>
+          <form className='form'> 
+            <h1>Reset Password</h1>
 
-        <div className='input-box'>
-          <input type='email' placeholder='Enter Existing Email' 
-          name='email' value={email} onChange={ (e) => setEmail(e.target.value)}
-          ></input>
-          {/* Your form goes here */}
-          {errorMessage && <p style={{ color: 'white' }}>{errorMessage}</p>}
-          <FaUser className='icon'/>
+            <div className='input-box'>
+              <input type='email' placeholder='Enter Existing Email' 
+              name='email' value={email} onChange={ (e) => setEmail(e.target.value)}
+              ></input>
+              {/* Your form goes here */}
+              {errorMessage && <p style={{ color: 'white' }}>{errorMessage}</p>}
+              <FaUser className='icon'/>
+            </div>
+
+            <div className='input-box'>
+              <input type="text" placeholder='Enter OTP' 
+              name='otp' value={otp} onChange={ (e) => setOtp(e.target.value)}></input>
+              <BsChatLeftTextFill className='icon'/>
+            </div>
+
+            <div className='input-box'>
+              <input type={show? "text" : "password" } placeholder='Enter new password' required
+              name='password' value={password} onChange={ (e) => setPassword(e.target.value)}></input>
+              <label onClick={handleShow} >  {show ? <HiEyeSlash className='icon'/> : <HiMiniEye className='icon'/>} </label>
+            </div>
+
+
+            {/* <div className='remember-forgot'>
+              <label><input type='checkbox'/>Remember me</label>
+              <a href='#'>Forgot Password</a>
+            </div> */}
+
+            <button onClick={ (e) => handlelogin(e)}>Reset</button>
+            {/* <div className='register-link'>
+              <p>Don't have an account? <a href='/register'>Register</a></p>
+            </div> */}
+          </form>
         </div>
-
-        <div className='input-box'>
-          <input type="text" placeholder='Enter OTP' 
-          name='otp' value={otp} onChange={ (e) => setOtp(e.target.value)}></input>
-          <BsChatLeftTextFill className='icon'/>
-        </div>
-
-        <div className='input-box'>
-          <input type={show? "text" : "password" } placeholder='Enter new password' required
-          name='password' value={password} onChange={ (e) => setPassword(e.target.value)}></input>
-          <label onClick={handleShow} >  {show ? <HiEyeSlash className='icon'/> : <HiMiniEye className='icon'/>} </label>
-        </div>
-
-
-        {/* <div className='remember-forgot'>
-          <label><input type='checkbox'/>Remember me</label>
-          <a href='#'>Forgot Password</a>
-        </div> */}
-
-        <button onClick={ (e) => handlelogin(e)}>Reset</button>
-        {/* <div className='register-link'>
-          <p>Don't have an account? <a href='/register'>Register</a></p>
-        </div> */}
-      </form>
+      </div>
     </div>
   )
 }
