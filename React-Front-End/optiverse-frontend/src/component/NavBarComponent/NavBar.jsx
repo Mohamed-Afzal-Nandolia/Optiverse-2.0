@@ -1,7 +1,28 @@
-import React from 'react';
 import './NavBar.css'; 
+import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import {  useLocation } from 'react-router-dom';//useHistory,
+
 
 function NavBar() {
+
+    const [buttonText, setButtonText] = useState('Log Out');
+    // const history = useHistory();
+    const location = useLocation();
+
+
+    useEffect(() => {
+        // Update button text based on current URL path
+        const path = location.pathname;
+        if (path === '/login') {
+          setButtonText('Register');
+        } else if (path === '/register') {
+          setButtonText('Login');
+        } else if (path === '/home-page') {
+          setButtonText('Log Out');
+        } 
+      }, [location.pathname]);
+
 
     function setActive(e) {
         e.preventDefault();
@@ -10,6 +31,31 @@ function NavBar() {
         });
         e.target.classList.add('active');
     }
+
+
+    const navigate = useNavigate()
+
+    const handleLogoutClick = () => {
+        if(buttonText === "Register"){
+            navigate('/register')
+        }
+        else if(buttonText === "Login"){
+            navigate('/login')
+        }
+        else{
+            logout()
+        }
+     
+    }
+
+
+    function logout() {
+    // Clear the user's authentication state
+    localStorage.removeItem('user');
+    sessionStorage.clear();
+    // Redirect the user to the login page
+    navigate('/login')
+  }
 
     return (
         <div>
@@ -28,7 +74,7 @@ function NavBar() {
                     </ul>
                 </div>
                 <div className="nav-button">
-                    <button className="btn white-btn" id="loginBtn" onClick={login}>Log In</button>
+                    <button className="btn white-btn" onClick={handleLogoutClick}>{buttonText}</button>
                 </div>
             </nav>
         </div>        
@@ -40,7 +86,7 @@ function NavBar() {
     }
 
     function login() {
-        // Handle login functionality
+
     }
 }
 

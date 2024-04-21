@@ -8,21 +8,23 @@ import 'react-toastify/dist/ReactToastify.css'
 import NavBar from './component/NavBarComponent/NavBar';
 import SessionProvider from './component/SessionProviderComponent/SessionProvider';
 
-
 function App() {
   return (
     <div>
       <SessionProvider>
 
-      <NavBar/>
-
+    
       <BrowserRouter>
+      {/* <NavBar/> */}
+      <NavBar currentPage="login" />
         <Routes>      
             
             //http://localhost:8080 agar url /home-page hai to ye component hit hoga
             <Route path='/home-page' element = { <HomePage /> }></Route>
             //http://localhost:8080 agar url /login to ye component hit hoga
             <Route path='/login' element={ <LoginPage/> }></Route>
+            //http://localhost:8080 agar url / to ye component hit hoga
+            <Route path='/' element={ <LoginPage/> }></Route>
             //http://localhost:8080 agar url /register to ye component hit hoga
             <Route path='/register' element={ <RegisterPage/> }></Route>
             //http://localhost:8080 agar url /fp to ye component hit hoga

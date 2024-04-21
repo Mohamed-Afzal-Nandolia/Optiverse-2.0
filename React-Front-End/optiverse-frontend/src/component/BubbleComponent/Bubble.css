@@ -1,69 +1,79 @@
-/* General styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+*{
+    .feeling-card {
+      border-radius: 35px;
+      box-shadow: 0 4px 6.2px 3px rgba(0, 0, 0, 0.25);
+      border: 1px solid #000;
+      background-color: #d9d9d9;
+      display: flex;
+      max-width: 563px;
+      flex-direction: column;
+      padding: 66px 45px 10px 22px;
+    }
 
-/* Wrapper styles */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    height: 100vh; /* Take up the full viewport height */
-}
+    @media (max-width: 991px) {
+      .feeling-card {
+        padding: 0 20px;
+      }
+    }
 
-/* Bubble styles */
-.bubble {
-    margin-top: 50px; /* Reduce the top margin */
-    padding: 25px;
-    background-color: #fbf3e4;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-}
+    .question {
+      color: #000;
+      align-self: start;
+      margin-left: 52px;
+      font: 400 24px Inter, sans-serif;
+    }
 
-.bubble textarea {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    outline: none;
-    border: none;
-    cursor: auto;
-    overflow-wrap: break-word;
-    font-size: 1.5em;
-    background-color: rgba(255, 255, 255, 0);
-}
+    @media (max-width: 991px) {
+      .question {
+        margin-left: 10px;
+      }
+    }
 
-.bubble input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
+    .feeling-input {
+      display: flex;
+      margin-top: 127px;
+      width: 100%;
+      gap: 20px;
+      justify-content: space-between;
+    }
 
-.bubble .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
+    @media (max-width: 991px) {
+      .feeling-input {
+        max-width: 100%;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+    }
 
-.bubble .tag {
-    padding: 5px 10px;
-    background-color: #eee;
-    border-radius: 5px;
-}
+    .emoji-container {
+      display: flex;
+      gap: 1px;
+    }
 
-.bubble .post-btn {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px; /* Add some space above the post button */
-}
+    .emoji {
+      width: 60px;
+      height: auto;
+      object-fit: contain;
+      margin: auto 0;
+    }
+
+    .post-button {
+      border-radius: 15px;
+      background-color: #d9d9d9;
+      color: #000;
+      white-space: nowrap;
+      justify-content: center;
+      margin: auto 0;
+      padding: 12px 36px;
+      font: 400 20px Inter, sans-serif;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 991px) {
+      .post-button {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+  }

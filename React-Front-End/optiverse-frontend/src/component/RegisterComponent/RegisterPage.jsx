@@ -1,23 +1,20 @@
 import React, { useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
-import '/src/index.css'
 import './RegisterPage.css'
 import { MdEmail } from "react-icons/md";
 import { HiMiniEye, HiEyeSlash } from "react-icons/hi2";
 import { addTodo } from '../../services/AuthService'
 import { ToastContainer, toast } from 'react-toastify';
+import { FaUser } from "react-icons/fa";  
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const RegisterPage = () => {
 
+  const[username , setUsername] = useState('');
   const[email , setEmail] = useState('');
   const[password, setPassword] = useState('');
-  // const[errorMessage, setErrorMessage] = useState('')
-  // const[inputErrorMessage, setInputErrorMessage] = useState('')
-  // const[passErrorMessage, setPassErrorMessage] = useState('')
   const[acceptTerms, setAcceptTerms] = useState(false)//only true or false
-  // const[acceptTermsMessage, setAcceptTermsMessage] = useState('')//this will display the message of the respective checkbox
   const[show, setShow] = useState(false);//this is for password show and unshow
 
   const handleChange = event => {
@@ -43,7 +40,11 @@ const RegisterPage = () => {
     validatePassword(password)//password validation
 
     if(emailInput.validity.valid){
-      const register = {email, password}
+      const register = {
+        u_email: email,
+        u_pass: password,
+        u_uname: username
+      }
       console.log(register);
 
       if(!acceptTerms) {
@@ -57,7 +58,6 @@ const RegisterPage = () => {
         navigate('/login')
       }).catch(error => {
         toast.error('User is already Register')
-        // setErrorMessage('User is already Register');
         console.error(error);
       })
     }
@@ -65,16 +65,9 @@ const RegisterPage = () => {
       toast.error('Please Enter a valid Email')
       // setInputErrorMessage('Please Enter a valid Email');
     }
-    // if(validate(password)){
-    //   toast.success("Is Strong Password")
-    // }
-    // else{
-    //   toast.error("Password is not Strong")
-    // }
-    
+
     if(!acceptTerms){//this has to be after the handleRegistration function so that both email error and accept terms both will work!
       toast.error("Please accept all terms and conditions.")
-      // setAcceptTermsMessage('Please accept all the terms and conditions.')
       return;
     }
 
@@ -141,17 +134,21 @@ const RegisterPage = () => {
   return (
     <div className='gradient-background'>
       <div className='container' >
-        <ToastContainer />
-        <div className='wrapper'>
+        <div className='wrapper1'>
         <form className='form'> 
           <h1>Register</h1>
+
+          <div className='input-box'>
+            <input type='email' placeholder='Enter Username'
+            name='username' value={username} onChange={ (e) => setUsername(e.target.value) }
+            ></input>
+            <FaUser  className='icon'/>
+          </div>
+
           <div className='input-box'>
             <input type='email' placeholder='Enter Your Email' id='email'
             name='email' value={email} onChange={ (e) => setEmail(e.target.value) }
             ></input>
-            {/* Your form goes here */}
-            {/* {errorMessage && <p style={{ color: 'white' }}>{errorMessage}</p>} */}
-            {/* {inputErrorMessage && <p style={{ color: 'white' }}>{inputErrorMessage}</p>} */}
             <MdEmail className='icon'/>
           </div>
 
@@ -173,7 +170,6 @@ const RegisterPage = () => {
               onChange={handleChange}
               />Accept All Terms & Conditions
             </label>
-            {/* {acceptTermsMessage && <p style={{ color: 'white', marginTop: '17px' }}>{acceptTermsMessage}</p>} */}
           </div>
 
           <button 
@@ -185,6 +181,7 @@ const RegisterPage = () => {
         </form>
       </div>
     </div>
+    <ToastContainer />
   </div>
   )
 }

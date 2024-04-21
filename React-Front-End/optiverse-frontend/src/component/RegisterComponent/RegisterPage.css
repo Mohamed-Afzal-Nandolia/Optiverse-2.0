@@ -16,9 +16,9 @@
     }
 }
 
-.wrapper{
+.wrapper1{
     width: 620px;
-    height: 440px;
+    height: 470px;
     background-color: transparent;
     border: 2px solid rgba(255,255,255,.2);
     backdrop-filter: blur(30px);
@@ -27,12 +27,12 @@
     border-radius: 10px;
     padding: 30px 40px;
 }
-.wrapper h1{
+.wrapper1 h1{
     font-size: 36px;
     text-align: center;
 }
 
-.wrapper .input-box{
+.wrapper1 .input-box{
     position: relative;
     width: 100%;
     height: 50px;
@@ -61,7 +61,7 @@
     font-size: 16px;
 }
 
-.wrapper .remember-forgot{
+.wrapper1 .remember-forgot{
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
@@ -79,7 +79,7 @@
     text-decoration: underline;
 }
 
-.wrapper button{
+.wrapper1 button{
     width: 100%;
     height: 45px;
     background: #fff;
@@ -93,11 +93,10 @@
     font-weight: 700;
 }
 
-.wrapper .register-link{
+.wrapper1 .register-link{
     font-size: 14.5px;
     text-align: center;
-    margin: 20px 0 15px;
-    margin-top: -20px;
+    margin: 15px 0 15px;
 }
 .register-link p a{
     color: #fff;
