@@ -1,79 +1,16 @@
-*{
-    .feeling-card {
-      border-radius: 35px;
-      box-shadow: 0 4px 6.2px 3px rgba(0, 0, 0, 0.25);
-      border: 1px solid #000;
-      background-color: #d9d9d9;
-      display: flex;
-      max-width: 563px;
-      flex-direction: column;
-      padding: 66px 45px 10px 22px;
-    }
-
-    @media (max-width: 991px) {
-      .feeling-card {
-        padding: 0 20px;
-      }
-    }
-
-    .question {
-      color: #000;
-      align-self: start;
-      margin-left: 52px;
-      font: 400 24px Inter, sans-serif;
-    }
-
-    @media (max-width: 991px) {
-      .question {
-        margin-left: 10px;
-      }
-    }
-
-    .feeling-input {
-      display: flex;
-      margin-top: 127px;
-      width: 100%;
-      gap: 20px;
-      justify-content: space-between;
-    }
-
-    @media (max-width: 991px) {
-      .feeling-input {
-        max-width: 100%;
-        flex-wrap: wrap;
-        margin-top: 40px;
-      }
-    }
-
-    .emoji-container {
-      display: flex;
-      gap: 1px;
-    }
-
-    .emoji {
-      width: 60px;
-      height: auto;
-      object-fit: contain;
-      margin: auto 0;
-    }
-
-    .post-button {
-      border-radius: 15px;
-      background-color: #d9d9d9;
-      color: #000;
-      white-space: nowrap;
-      justify-content: center;
-      margin: auto 0;
-      padding: 12px 36px;
-      font: 400 20px Inter, sans-serif;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 991px) {
-      .post-button {
-        white-space: initial;
-        padding: 0 20px;
-      }
-    }
-  }
+.bubble {
+  /* Adjust the width and height to match the red square's size */
+  width: 300px; /* Example width, adjust as needed */
+  height: 300px; /* Example height, adjust as needed */
+  /* Other styles remain unchanged */
+  align-self: stretch;
+  
+  box-shadow: 0 4px 6.2px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 35px;
+  background-color: red;
+  border: 1px solid #000;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 33px 38px 14px 39.4px;
+  gap: 13.8px;
+}
