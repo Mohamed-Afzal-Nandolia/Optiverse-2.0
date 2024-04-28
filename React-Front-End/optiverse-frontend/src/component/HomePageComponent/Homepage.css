@@ -1,4 +1,6 @@
 .gradient-background {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(300deg,#1d42a1,#051a35,#290250);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
@@ -16,3 +18,11 @@
     }
 }
 
+.koibhi{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  /* margin: auto 0; */
+  justify-content: center;
+  align-items: center;
+}

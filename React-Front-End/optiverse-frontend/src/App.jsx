@@ -5,7 +5,6 @@ import LoginPage from './component/LoginComponent/LoginPage';
 import RegisterPage from './component/RegisterComponent/RegisterPage';
 import ForgotPassword from './component/ForgotPasswordComponent/ForgotPassword'
 import 'react-toastify/dist/ReactToastify.css'
-import NavBar from './component/NavBarComponent/NavBar';
 import SessionProvider from './component/SessionProviderComponent/SessionProvider';
 
 function App() {
@@ -16,8 +15,8 @@ function App() {
     
       <BrowserRouter>
       {/* <NavBar/> */}
-      <NavBar currentPage="login" />
-        <Routes>      
+      {/* <NavBar currentPage="login" /> */}
+        <Routes>
             
             //http://localhost:8080 agar url /home-page hai to ye component hit hoga
             <Route path='/home-page' element = { <HomePage /> }></Route>

@@ -25,12 +25,12 @@ const HomePage = () => {
   return (
     <div className='gradient-background'>
       
-      <div className='create'>
-      {/* <Bubble />    */}
       <North/>
-      <West/>
-      <Center/>
-      <East/>
+
+      <div className='koibhi'>
+          <West/>
+          <Center/>
+          <East/>
       </div>
       
     </div>
