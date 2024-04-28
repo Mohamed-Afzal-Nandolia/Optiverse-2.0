@@ -26,7 +26,7 @@ const Recent = () => {
   return (
     <div style={styles.dropdownContainer}>
       <div onClick={handleDropdownToggle} style={styles.dropdownHeader}>
-      <span style={{ color: 'white' , fontSize: '20px' }}>Recent Communities</span>
+      <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>Recent Communities</span>
         {/* Arrow icon to indicate dropdown */}
         <span>{dropdownVisible ? 
             <IoIosArrowDropupCircle size={40} style={{ fill: 'white' , padding: '5px' , top: 0 , left: 0}} /> 
@@ -39,10 +39,10 @@ const Recent = () => {
         <div style={styles.dropdownContent}>
           {/* List of communities */}
           <div onClick={() => handleCommunityClick('r/StableDiffusion')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/StableDiffusion</span>
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/StableDiffusion</span>
           </div>
           <div onClick={() => handleCommunityClick('r/announcements')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/announcements</span> 
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/announcements</span> 
           </div>
         </div>
       )}

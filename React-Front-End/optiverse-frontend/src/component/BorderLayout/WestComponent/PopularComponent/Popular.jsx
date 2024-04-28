@@ -23,7 +23,8 @@ const Popular = () => {
         alignItems: 'center',
         cursor: 'pointer', // Change cursor to pointer on hover
         fontSize: '24px', // Adjust icon size
-        paddingLeft: '1em'
+        paddingLeft: '1em',
+        userSelect: 'none',
       }}
       onClick={handleClick}
     >

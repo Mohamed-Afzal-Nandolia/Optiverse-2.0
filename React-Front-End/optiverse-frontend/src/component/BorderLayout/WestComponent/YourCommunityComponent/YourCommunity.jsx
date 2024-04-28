@@ -26,7 +26,7 @@ const YourCommunity = () => {
   return (
     <div style={styles.dropdownContainer}>
       <div onClick={handleDropdownToggle} style={styles.dropdownHeader}>
-      <span style={{ color: 'white' , fontSize: '20px' }}>Recent Communities</span>
+      <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>Your Communities</span>
         {/* Arrow icon to indicate dropdown */}
         <span>{dropdownVisible ? 
             <IoIosArrowDropupCircle size={40} style={{ fill: 'white' , padding: '5px' , top: 0 , left: 0}} /> 
@@ -39,22 +39,22 @@ const YourCommunity = () => {
         <div style={styles.dropdownContent}>
           {/* List of communities */}
           <div onClick={() => handleCommunityClick('r/StableDiffusion')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/PositiveAffirmation</span>
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/PositiveAffirmation</span>
           </div>
           <div onClick={() => handleCommunityClick('r/announcements')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/InspiringStories</span> 
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/InspiringStories</span> 
           </div>
           <div onClick={() => handleCommunityClick('r/announcements')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/SelfImprovementAndGrowth</span> 
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/SelfImprovementAndGrowth</span> 
           </div>
           <div onClick={() => handleCommunityClick('r/announcements')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/Mindfullness</span> 
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/Mindfullness</span> 
           </div>
           <div onClick={() => handleCommunityClick('r/announcements')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/Meditation</span> 
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/Meditation</span> 
           </div>
           <div onClick={() => handleCommunityClick('r/announcements')} style={styles.communityItem}>
-          <span style={{ color: 'white' , fontSize: '20px' }}>O/Gratitude</span> 
+          <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none' }}>O/Gratitude</span> 
           </div>
           {/* <div onClick={() => handleCommunityClick('r/announcements')} style={styles.communityItem}>
           <span style={{ color: 'white' , fontSize: '20px' }}>O/PositiveJournaling</span> 
