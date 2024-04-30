@@ -1,0 +1,21 @@
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+.nav-button .btn{
+    width: auto;
+    height: auto;
+    font-weight: 500;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import Cake from './cake'
 
 
 const East = () => {
@@ -14,9 +13,13 @@ const East = () => {
         backgroundColor: 'transparent',
         // border: '1px solid yellow', // Border to make it visible
         // zIndex: 9998, // Ensure it's above other content, but below the NorthComponent
+        padding: '50px 25px 50px 25px',
+        borderLeft: '2px solid rgba(255, 255, 255, 0.3)',
+        overflow: 'scroll',
+        scrollbarWidth: 'none', /* For Firefox */
+        msOverflowStyle: 'none', /* For Internet Explorer and Edge */
       }}
     >
-      <Cake/>
     </div>
   )
 }

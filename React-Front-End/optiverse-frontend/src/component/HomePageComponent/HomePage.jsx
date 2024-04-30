@@ -23,7 +23,11 @@ const HomePage = () => {
   }, [])
   
   return (
-    <div className='gradient-background'>
+    <div className='gradient-background' 
+      style={{overflow: 'scroll',
+      scrollbarWidth: 'none', /* For Firefox */
+      msOverflowStyle: 'none', /* For Internet Explorer and Edge */}}
+      >
       
       <North/>
 

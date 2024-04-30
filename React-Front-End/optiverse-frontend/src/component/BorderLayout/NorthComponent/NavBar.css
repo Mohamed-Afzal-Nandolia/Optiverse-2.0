@@ -46,6 +46,7 @@ body{
     color: white;
     font-size: 25px;
     font-weight: 600;
+    cursor: pointer;
 }
 .nav-menu ul{
     display: flex;

@@ -5,9 +5,11 @@ import Line from './LineComponent/Line';
 import GroupComponent from './RecentComponent/GroupComponent';
 import YourCommunity from './YourCommunityComponent/YourCommunityGroup';
 import YourCommunityGroup from './YourCommunityComponent/YourCommunityGroup';
+import VerticleLine from './LineComponent/VerticleLine';
 
 
 const West = () => {
+
   return (
     <div
       style={{
@@ -19,10 +21,16 @@ const West = () => {
         backgroundColor: 'transparent',
         // border: '1px solid yellow', // Border to make it visible
         zIndex: 9998, // Ensure it's above other content, but below the NorthComponent
-        overflow: 'hidden', // Ensure child components don't overflow
-        padding: '50px',
-        paddingBottom: '0px'//B'CAUSE PAGE GETTING SCROLLED
-      }}
+        
+        padding: '50px 25px 50px 25px',
+        paddingBottom: '0px',//B'CAUSE PAGE GETTING SCROLLED
+        // borderRight: '1px solid #FFFFFF',
+        borderRight: '2px solid rgba(255, 255, 255, 0.3)',
+        overflow: 'scroll',
+        scrollbarWidth: 'none', /* For Firefox */
+        msOverflowStyle: 'none', /* For Internet Explorer and Edge */
+      }
+    }
     >
       <Popular />
       <Trending/>
@@ -30,8 +38,7 @@ const West = () => {
       <GroupComponent />
       <Line style={{padding: '1em'}}/>     
       <YourCommunityGroup />
-      
-      
+    
     </div>
   );
 };
