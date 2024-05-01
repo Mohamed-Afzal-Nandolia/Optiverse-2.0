@@ -6,6 +6,38 @@ export const addTodo = (register) => axios.post(REST_API_BASE_URL + 'api/', regi
 
 export const getTodo = (LoginDetails) => axios.post(REST_API_BASE_URL + 'api/login', LoginDetails);
 
+export const getPost = () => axios.get(REST_API_BASE_URL + 'api/posts/');
+
+export const addPost = (postText) => axios.post(REST_API_BASE_URL + 'api/posts/', postText);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // //JWT token Authentication
 // export const login = async (email, password) => {

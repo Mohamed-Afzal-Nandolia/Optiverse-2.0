@@ -62,7 +62,7 @@ const MyProfile = () => {
   return (
     <div style={styles.dropdownContainer} onClick={handleDropdownToggle}>
       <div style={styles.dropdownHeader}>
-        <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none', padding: '0.4em' }}>My Profile</span>
+        <span style={{ color: 'white' , fontSize: '20px' , userSelect: 'none', padding: '0.4em 1.2em 0.4em 1.2em' }}>My Profile</span>
         
       </div>
       {/* Dropdown content */}

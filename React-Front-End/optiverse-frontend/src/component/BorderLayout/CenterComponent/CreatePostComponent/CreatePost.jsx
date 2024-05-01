@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { addPost } from '/src/services/AuthService.js';
 
 const CreatePost = ({ onPost }) => {
   const [postText, setPostText] = useState('');
@@ -7,9 +8,24 @@ const CreatePost = ({ onPost }) => {
     setPostText(event.target.value);
   };
 
-  const handlePostClick = () => {
-    onPost(postText);
-    setPostText('');
+  const handlePostClick = async () => {
+    try {
+      // Capture the current date in the format "yyyy-MM-dd"
+      const currentDate = new Date().toISOString().split('T')[0];
+
+      // Call the addPost function to post the content along with the current date
+      await addPost({ p_post: postText, p_date: currentDate });
+
+      // Clear the post text after posting
+      setPostText('');
+
+      // Optionally, you can call onPost if needed
+      if (onPost) {
+        onPost();
+      }
+    } catch (error) {
+      console.error('Error posting:', error);
+    }
   };
 
   return (
@@ -30,15 +46,15 @@ const CreatePost = ({ onPost }) => {
 };
 
 const styles = {
-   container: {
+  container: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     padding: '2em 2em 1em 2em',
     color: 'white',
     borderRadius: '10px',
-    borderBottom: '2px solid rgba(255, 255, 255, 0.3)', // Only border bottom
-    },
+    borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+  },
   textarea: {
     width: '100%',
     minHeight: '100px',
@@ -46,8 +62,8 @@ const styles = {
     borderRadius: '10px',
     padding: '1em',
     border: 'none',
-    fontSize: '19px', // Adjust the textarea font size
-    outline: 'none', // Remove the outline
+    fontSize: '19px',
+    outline: 'none',
   },
   button: {
     backgroundColor: '#ffffff',

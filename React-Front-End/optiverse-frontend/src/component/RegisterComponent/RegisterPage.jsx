@@ -125,7 +125,6 @@ const RegisterPage = () => {
     return true;
   }
 
-
   const handleShow = () => {
     setShow(!show)
   }

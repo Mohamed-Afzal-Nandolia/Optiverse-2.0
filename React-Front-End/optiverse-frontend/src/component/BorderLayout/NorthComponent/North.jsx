@@ -2,19 +2,17 @@ import React from 'react'
 import './NavBar.css'
 import { useNavigate } from 'react-router-dom'
 import  { useState, useEffect } from 'react';
-import {  useLocation } from 'react-router-dom';//useHistory,
+import {  useLocation } from 'react-router-dom';
 import MyProfile from './MyProfileComponent/MyProfile';
 
 
 const North = () => {
 
   const [buttonText, setButtonText] = useState('Log Out');
-  // const history = useHistory();
   const location = useLocation();
 
 
   useEffect(() => {
-      // Update button text based on current URL path
       const path = location.pathname;
       if (path === '/login') {
         setButtonText('Register');
@@ -37,7 +35,7 @@ const North = () => {
 
   const navigate = useNavigate()
 
-  const handleLogoutClick = () => {
+  /*const handleLogoutClick = () => {
       if(buttonText === "Register"){
           navigate('/register')
       }
@@ -57,27 +55,20 @@ const North = () => {
   sessionStorage.clear();
   // Redirect the user to the login page
   navigate('/login')
-  }
+  }*/
 
   function mySearch() {
-      // var searchBox = document.getElementById('search');
-      // searchBox.style.visibility = 'hidden';
-  }
-
-  function login() {
 
   }
 
   const handleClick = () => {
-    // Handle click event here
     navigate('/home-page')
     console.log('OptiVerse clicked');
   };
 
   return (
     <div className='cali nav'>
-      {/* <NavBar currentPage="login"/> */}
-      
+     
         <div className="nav-logo">
             <p onClick={handleClick}>OptiVerse </p>
         </div>
