@@ -39,6 +39,3 @@ public class User {
     private LocalDate u_date;
 
 }
-//    Define Many-to-One relationship with Post
-//    @ManyToOne
-//    @JoinColumn(name = "postId", referencedColumnName = "id")

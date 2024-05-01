@@ -5,18 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import net.optiverse.optiversebackend.entity.User;
 
 import java.time.LocalDate;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class PostDto {
 
     private Long p_id;
 
-    private Long u_id;
+    private User u_id;
 
     private LocalDate p_date;
 
